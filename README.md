@@ -40,19 +40,23 @@
 | `approvalTimeoutSeconds` | 否 | 审批卡挂起超时（秒），默认 300（5 分钟），超时自动拒绝 |
 | `questionTimeoutSeconds` | 否 | 远程提问卡挂起超时（秒），默认 600（10 分钟），超时自动取消 |
 
-## 安装（web profile）
+## 安装
 
-在 DSH 仓库根目录执行：
+本插件是 **DSH 生态插件**：`@deepseek-ai/*`（cordis / dsh-agent / dsh-llm / dsh-session / dsh-user-approval）
+由 DSH 宿主环境提供（peerDependencies，非独立安装）。标准安装方式是经 DSH 的插件命令（link 安装）：
 
 ```bash
-node apps/cli/lib/bin.js plugin --profile web add dsh-feishu-bridge@npm:dsh-feishu-bridge
-# 或本地开发时 link 安装：
-# node apps/cli/lib/bin.js plugin --profile web add dsh-feishu-bridge@link:<本插件目录绝对路径>
+# 在 DSH 仓库根目录执行
+node apps/cli/lib/bin.js plugin --profile web add dsh-feishu-bridge@link:<本插件目录绝对路径>
 ```
 
 然后在 `$DSH_HOME/profiles/web/cordis.patch.yml` 的 `dsh-feishu-bridge` 条目填入飞书应用
 `appId` / `appSecret`（飞书开放平台创建企业自建应用、开启机器人能力后获得），重启 `dsh web` 生效。
-依赖 `@deepseek-ai/*`（cordis / dsh-agent / dsh-llm / dsh-session / dsh-user-approval）由 DSH 宿主环境提供（peerDependencies）。
+
+> **注意**：不要在本仓库目录直接 `pnpm install`——`@deepseek-ai/*` 的 npm 发布链不完整
+> （`@deepseek-ai/dsh-session` → `@deepseek-ai/dsh-type-meta` 未发布，上游问题），
+> 且这些包本就该由 DSH 宿主提供。clone 本仓库用于源码阅读 / 二次开发；构建与测试需在
+> 已安装 DSH 的环境中进行（link 安装后，插件目录的 node_modules 即包含宿主提供的依赖）。
 
 ## 构建与测试
 
