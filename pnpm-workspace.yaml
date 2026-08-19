@@ -1,0 +1,6 @@
+# pnpm ≥10 ignores dependency build scripts until allowlisted (pnpm 11: "approve-builds").
+# esbuild (vitest dep) needs its postinstall to fetch the platform binary; protobufjs
+# (lark node-sdk dep) needs its build step. Both are required for build & test.
+allowBuilds:
+  esbuild: true
+  protobufjs: true

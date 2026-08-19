@@ -1,11 +1,6 @@
 # dependencies
 node_modules/
 
-# lockfile is a local-link artifact (peer deps provided by the DSH host); not meaningful for this plugin repo
-pnpm-lock.yaml
-# pnpm-generated workspace template (placeholder allowBuilds only; no packages field)
-pnpm-workspace.yaml
-
 # build output (compiled from src/ via `pnpm build`)
 lib/
 *.tsbuildinfo
