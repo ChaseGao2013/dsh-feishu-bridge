@@ -1,0 +1,22 @@
+# dsh-feishu-bridge bundle patch：注册飞书桥接插件（P1 MVP：文本往返 + 流式卡）。
+#
+# 配置说明（appId/appSecret 必填，否则插件跳过飞书连接；其余可留空）：
+#   appId: ''             # 飞书开放平台应用 App ID（创建应用后获得）
+#   appSecret: ''         # 飞书开放平台应用 App Secret
+#   encryptKey: ''        # 事件加密 key（WS 模式下可选）
+#   verificationToken: '' # 事件校验 token（WS 模式下可选）
+#   pairingCode: ''       # 预置配对码；留空则启动时自动生成并打印到 dsh 日志
+#   allowedUsers: []      # 允许用户 open_id 白名单（命中直接放行，与配对并集）
+#   sessionCwd: ''          # DSH 会话工作目录（留空则默认用户主目录；建议显式配置为实际工作目录）
+#   stateDir: ''          # 状态目录；默认 $DSH_HOME/feishu-bridge
+- insert:
+    - id: dsh-feishu-bridge
+      name: 'dsh-feishu-bridge'
+      config:
+        appId: ''
+        appSecret: ''
+        encryptKey: ''
+        verificationToken: ''
+        pairingCode: ''
+        allowedUsers: []
+        sessionCwd: ''

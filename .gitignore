@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+
+# build output (compiled from src/ via `pnpm build`)
+lib/
+*.tsbuildinfo
+
+# runtime state (defaults to $DSH_HOME/feishu-bridge, never in-repo)
+pairing.json
+runtime-config.json
+audit.log
+*.log
+.feishu-attachments/
+
+# misc
+tmp/
+.DS_Store
