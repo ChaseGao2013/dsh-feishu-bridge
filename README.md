@@ -18,6 +18,26 @@
 | 远程提问 | AI 要问你时弹选项卡，点选按钮或直接回文本即可 |
 | 附件收发 | 飞书发图/文件给 DSH 处理，DSH 也能把文件发回飞书 |
 
+## 效果展示
+
+| 配对流程 | 远程命令（/status /new） |
+|---|---|
+| <img src="docs/screenshots/pairing.png" width="260"> | <img src="docs/screenshots/commands.png" width="260"> |
+
+| 审批卡片（✅允许 / ♾️永久允许 / ❌拒绝） | 远程提问卡（选项 + ✏️自定义回答） |
+|---|---|
+| <img src="docs/screenshots/approval-card.png" width="260"> | <img src="docs/screenshots/question-card.png" width="260"> |
+
+| /config 配置卡 | 流式回复 |
+|---|---|
+| <img src="docs/screenshots/config-card.png" width="260"> | <img src="docs/screenshots/messaging.png" width="260"> |
+
+| 附件接收（发图给 DSH 识别） | 附件发送（DSH 发图回飞书） |
+|---|---|
+| <img src="docs/screenshots/attachment-receive.png" width="260"> | <img src="docs/screenshots/attachment-send.png" width="260"> |
+
+（截图来自开发期真机实测，界面文字含本地环境信息，仅作功能展示。）
+
 ## 快速开始
 
 1. 在飞书开放平台创建企业自建应用，开启「机器人」能力，获取 App ID / App Secret。
